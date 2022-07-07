@@ -92,6 +92,8 @@
 
   <form action="https://www.google.com/search" target="_blank">
     <input type="text" name="q" />
+    <input hidden type="text" name="ie" value="UTF-8" />
+    <input hidden type="text" name="sourceid" value="UTF" />
     <input type="submit" value="在新窗口打开搜索结果" />
   </form>
   <hr />
@@ -109,32 +111,37 @@
 
         <dt>年龄</dt>
         <dd>
-          <select>
+          <select name="age">
             <option selected hidden>请选择</option>
-            <optgroup label="少年"></optgroup>
-            <option>1到6岁</option>
-            <option>6到12岁</option>
-            <optgroup label="青年"></optgroup>
-            <option>13到15岁</option>
-            <option>16到18岁</option>
-            <optgroup label="少年"></optgroup>
-            <option>1到6岁</option>
-            <option>6到12岁</option>
+            <optgroup label="少年">
+              <option value="1-6">1到6岁</option>
+              <option value="6-12">6到12岁</option>
+            </optgroup>
+            <optgroup label="青年">
+              <option value="13-15">13到15岁</option>
+              <option value="16-18">16到18岁</option>
+            </optgroup>
+            <optgroup label="少年">
+              <option value="1-6">1到6岁</option>
+              <option value="6-12">6到12岁</option>
+            </optgroup>
           </select>
         </dd>
 
         <dt>生日</dt>
         <dd>
-          <input type="date" value="2021-11-04" />
+          <input type="date" value="2021-11-04" name="birthday" />
         </dd>
 
         <dt>生辰</dt>
-        <dd><input type="time" /></dd>
+        <dd><input type="time" name="birthtime" /></dd>
 
         <dt>照片</dt>
         <dd>
           <label
             ><input
+              id="avatar-upload"
+              name="avatar"
               type="file"
               hidden
             />点我上传照片，我比文件上传按钮好看</label
@@ -143,19 +150,21 @@
 
         <dt>自我介绍</dt>
         <dd>
-          <textarea cols="30" rows="10">&lt;/textarea &gt;</textarea>
+          <textarea name="self-intro" cols="30" rows="10">
+&lt;/textarea &gt;</textarea
+          >
         </dd>
 
-        <fieldset>
+        <fieldset disabled>
           <legend>这里全部禁用了</legend>
-          <input type="text" disabled />
-          <input type="text" disabled />
-          <input type="text" disabled />
-          <input type="text" disabled />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
         </fieldset>
       </dl>
-      <input type="submit" />
-      <input type="reset" />
+      <button type="submit">提交</button>
+      <button type="reset">重置</button>
     </form>
     <hr />
     <table border="1px ">
