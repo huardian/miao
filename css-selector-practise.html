@@ -9,12 +9,14 @@
         color: red;
       }
 
-      body > p:nth-child(2).a:hover {
-        color: red;
-      }
       body > p:nth-child(2).a:focus {
         color: blue;
       }
+
+      body > p:nth-child(2).a:hover {
+        color: red;
+      }
+
       body > p:nth-child(2).a:active {
         color: green;
       }
@@ -37,14 +39,13 @@
         color: pink;
       }
 
-      a[href*="@"] {
+      a[href^="mailto:" i] {
         color: blue;
       }
-      a[href*="tel"] {
+      a[href^="tel:" i] {
         color: yellow;
       }
-      a[href*="pdf"],
-      a[href*="PDF"] {
+      a[href$=".pdf" i] {
         font-size: 30px;
       }
 
@@ -65,10 +66,11 @@
         color: blue;
       }
 
+      .prime ul li:nth-child(1),
       .prime ul li:nth-child(2n + 4),
       .prime ul li:nth-child(3n + 6),
-      .prime ul li:nth-child(4n + 8),
-      .prime ul li:nth-child(5n + 10) {
+      .prime ul li:nth-child(5n + 10),
+      .prime ul li:nth-child(7n + 14) {
         color: palegreen;
       }
     </style>
