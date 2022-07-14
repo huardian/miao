@@ -13,6 +13,10 @@
       box-sizing: border-box;
     }
 
+    ul {
+      list-style: none;
+    }
+
     header {
       background-color: black;
       min-width: 600px;
@@ -30,35 +34,63 @@
       margin: 16px auto;
     }
 
-    .table {
-      list-style: none;
+    .table1 {
       width: 600px;
       margin: auto;
     }
 
-    .table li {
+    .table1 span {
+      display: inline-block;
+
       width: 180px;
       height: 40px;
       border: 3px solid;
       background-color: pink;
       margin-top: 15px;
-      margin-right: 15px;
+
       text-align: center;
       line-height: 34px;
     }
 
-    .table li:nth-child(n + 5) {
+    .table1 span:nth-child(3n + 1) {
+      margin-right: 25px;
+    }
+
+    .table1 span:nth-child(3n + 2) {
+      margin-right: 25px;
+    }
+
+    .table1 span:hover {
+      background-color: red;
+    }
+
+    .table2 {
+      width: 600px;
+      margin: auto;
+    }
+
+    .table2 li {
+      width: 180px;
+      height: 40px;
+      border: 3px solid;
+      background-color: pink;
+      margin-top: 15px;
+      text-align: center;
+      line-height: 34px;
+    }
+
+    .table2 li:nth-child(n + 5) {
       margin-left: 210px;
     }
-    .table li:nth-child(n + 9) {
+    .table2 li:nth-child(n + 9) {
       margin-left: 420px;
     }
 
-    .table li:nth-child(4n + 5) {
+    .table2 li:nth-child(4n + 5) {
       margin-top: -205px;
     }
 
-    .table li:hover {
+    .table2 li:hover {
       background-color: red;
     }
 
@@ -103,7 +135,24 @@
         页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
         宽度600px
       </article>
-      <ul class="table">
+      <div class="table1">
+        <span>宽180高40(包含边框)</span>
+        <span>水平间隙30px</span>
+        <span>垂直间隙15px</span>
+        <span>边框宽度3px</span>
+        <span>产品</span>
+        <span>产品</span>
+        <span>产品</span>
+        <span>产品</span>
+        <span>产品</span>
+        <span>产品</span>
+        <span>产品</span>
+        <span>产品</span>
+      </div>
+
+      <br />
+      <br />
+      <ul class="table2">
         <li>宽180高40(包含边框)</li>
         <li>水平间隙30px</li>
         <li>垂直间隙15px</li>
