@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vhcode</title>
+  </head>
+  <style>
+    * {
+      color: rgb(215, 218, 224);
+    }
+
+    body {
+      margin: 0;
+      background-color: rgb(33, 37, 43);
+    }
+
+    header {
+      background-color: rgb(33, 37, 43);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .menu {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    .icon {
+      display: inline-block;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 12px;
+      left: 10px;
+    }
+
+    .next {
+      display: inline-block;
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: 4px;
+      left: 325px;
+    }
+
+    .menu li {
+      display: inline-block;
+      font-size: 16px;
+      width: 80px;
+      height: 20px;
+      text-align: center;
+      /* color: rgb(215, 218, 224); */
+      position: relative;
+    }
+
+    li.title {
+      height: 30px;
+      padding-top: 10px;
+      border-radius: 10px;
+    }
+
+    li:hover {
+      background-color: rgb(51, 55, 59);
+      cursor: pointer;
+    }
+
+    .file:hover > ul {
+      display: block;
+    }
+
+    .menu2 {
+      margin: 0;
+      padding: 0;
+      display: none;
+
+      box-shadow: 0 2px 8px black;
+      width: 350px;
+      position: absolute;
+      padding: 8px 16px;
+      top: 43px;
+    }
+
+    .menu2 li {
+      width: 350px;
+      text-align: left;
+      margin: 5px;
+    }
+
+    .recent ul {
+      box-shadow: 2px 1px 8px black;
+      display: none;
+      position: absolute;
+      left: 362px;
+    }
+
+    .recent li {
+      margin: 10px;
+    }
+
+    .recent:hover > ul {
+      display: inline-block;
+    }
+  </style>
+
+  <body>
+    <header>
+      <div class="icon">
+        <svg
+          t="1657873208218"
+          class="icon"
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          p-id="1525"
+          width="200"
+          height="200"
+        >
+          <path
+            d="M746.222933 102.239573l-359.799466 330.820267L185.347413 281.4976 102.2464 329.864533l198.20544 182.132054-198.20544 182.132053 83.101013 48.510293 201.076054-151.558826 359.799466 330.676906 175.527254-85.251413V187.4944z m0 217.57952v384.341334l-255.040853-192.177494z"
+            fill="#2196F3"
+            p-id="1526"
+          ></path>
+        </svg>
+      </div>
+      <div class="menu">
+        <ul>
+          <li class="title file">
+            文件(F)
+            <ul class="menu2">
+              <li>新建文本文件</li>
+              <li>新建文件</li>
+              <li>新建窗口</li>
+              <hr />
+              <li>打开文件</li>
+              <li>打开文件夹</li>
+              <li>从文件打开工作区</li>
+              <li class="recent">
+                打开最近文件
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="next"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 5l7 7-7 7"
+                    /></svg
+                ></span>
+                <ul>
+                  <li>1.html</li>
+                  <li>2.html</li>
+                  <li>3.html</li>
+                  <li>4.html</li>
+                  <li>5.html</li>
+                  <li>6.html</li>
+                  <li>7.html</li>
+                  <li>8.html</li>
+                  <li>9.html</li>
+                  <li>10.html</li>
+                </ul>
+              </li>
+              <hr />
+              <li>将文件夹添加到工作区</li>
+              <li>将工作区另存为...</li>
+              <li>复制工作区</li>
+              <hr />
+              <li>保存</li>
+              <li>另存为...</li>
+              <li>全部保存</li>
+              <hr />
+              <li>
+                共享<span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="next"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 5l7 7-7 7"
+                    /></svg
+                ></span>
+              </li>
+              <hr />
+              <li>自动保存</li>
+              <li>
+                首选项<span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="next"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 5l7 7-7 7"
+                    /></svg
+                ></span>
+              </li>
+              <hr />
+              <li>还原文件</li>
+              <li>关闭编辑器</li>
+              <li>关闭文件夹</li>
+              <li>关闭窗口</li>
+              <hr />
+              <li>退出</li>
+            </ul>
+          </li>
+          <li class="title">编辑(E)</li>
+          <li class="title">选择(S)</li>
+          <li class="title">查看(V)</li>
+          <li class="title">转到(G)</li>
+          <li class="title">运行(R)</li>
+          <li class="title">终端(T)</li>
+          <li class="title">帮助(H)</li>
+        </ul>
+      </div>
+    </header>
+  </body>
+</html>
