@@ -62,6 +62,7 @@
       height: 30px;
       padding-top: 10px;
       border-radius: 10px;
+      margin-bottom: px;
     }
 
     li:hover {
@@ -75,31 +76,37 @@
 
     .menu2 {
       margin: 0;
-      padding: 0;
       display: none;
 
       box-shadow: 0 2px 8px black;
       width: 350px;
       position: absolute;
-      padding: 8px 16px;
-      top: 43px;
+      padding: 8px 0px;
+      top: 40px;
     }
 
     .menu2 li {
-      width: 350px;
+      width: 100%;
       text-align: left;
-      margin: 5px;
+      margin: 5px 0;
     }
 
     .recent ul {
       box-shadow: 2px 1px 8px black;
       display: none;
       position: absolute;
-      left: 362px;
+      top: -10px;
+      left: 350px;
+    }
+
+    menu .menu2 .recent {
+      width: 370px;
     }
 
     .recent li {
-      margin: 10px;
+      margin: 10px 0;
+      position: relative;
+      left: -16px;
     }
 
     .recent:hover > ul {
