@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sprite</title>
+    <style>
+      div {
+        width: 300px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr auto;
+        grid-template-rows: 1fr 1fr 1fr 1fr auto;
+      }
+
+      .icon-twitter {
+        height: 37px;
+        width: 37px;
+
+        display: inline-block;
+        background-image: url(https://cn.bing.com/rp/i3t3vGbFsQ-XpUOCob6i88omBUs.png);
+        background-position: -1288px 2px;
+      }
+
+      .icon-skype {
+        height: 37px;
+        width: 37px;
+
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        display: inline-block;
+        background-image: url(https://cn.bing.com/rp/i3t3vGbFsQ-XpUOCob6i88omBUs.png);
+        background-position: -1288px -34px;
+      }
+
+      .icon-facebook {
+        height: 37px;
+        width: 37px;
+
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+
+        display: inline-block;
+        background-image: url(https://cn.bing.com/rp/i3t3vGbFsQ-XpUOCob6i88omBUs.png);
+        background-position: -593px -42px;
+      }
+
+      .icon-microsoft {
+        height: 37px;
+        width: 37px;
+
+        grid-column: 4 / 5;
+        grid-row: 4 / 5;
+
+        display: inline-block;
+        background-image: url(https://cn.bing.com/rp/i3t3vGbFsQ-XpUOCob6i88omBUs.png);
+        background-position: -593px -79px;
+      }
+
+      .icon-bing {
+        height: 60px;
+        width: 47px;
+
+        grid-column: 5 / 6;
+        grid-row: 5 / 6;
+
+        display: inline-block;
+        background-image: url(https://cn.bing.com/rp/i3t3vGbFsQ-XpUOCob6i88omBUs.png);
+        background-position: -150px -50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span class="icon-twitter"></span>
+      <span class="icon-skype"></span>
+      <span class="icon-facebook"></span>
+      <span class="icon-microsoft"></span>
+      <span class="icon-bing"></span>
+    </div>
+  </body>
+</html>
