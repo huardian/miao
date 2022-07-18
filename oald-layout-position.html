@@ -12,6 +12,7 @@
     }
 
     html {
+      width: 100%;
       height: 100%;
     }
 
@@ -19,13 +20,16 @@
       margin: 0;
       height: 100%;
       min-width: 930px;
+      position: relative;
     }
 
     aside {
+      position: absolute;
       width: 200px;
-      height: 100%;
       background-color: pink;
       border: 1px solid;
+      top: 0;
+      bottom: 0;
     }
 
     aside p {
@@ -51,7 +55,11 @@
     }
 
     .word {
-      height: 88%;
+      position: absolute;
+      width: 90%;
+      top: 15%;
+      left: 10%;
+      bottom: 0;
       list-style: none;
       overflow: auto;
     }
@@ -65,28 +73,32 @@
     }
 
     .vocabulary {
-      height: 100vh;
       position: absolute;
       top: 0;
+      bottom: 0;
+      max-width: 200px;
       right: 200px;
     }
 
     .history {
-      height: 100vh;
       position: absolute;
+      max-width: 200px;
       top: 0;
+      bottom: 0;
       right: 0;
     }
 
     .article {
       background-color: cornsilk;
-      height: 100%;
-      width: 41.5%;
+
       min-width: 330px;
       border: 2px solid;
       position: absolute;
       top: 0;
+      bottom: 0;
+
       left: 200px;
+      right: 400px;
     }
 
     .article span {
@@ -110,8 +122,10 @@
     }
 
     .lorem {
-      /* padding-top: 32px; */
-      height: 92.5%;
+      position: absolute;
+      top: 10%;
+      bottom: 0;
+      left: 2%;
       padding-left: 16px;
       overflow: auto;
     }
