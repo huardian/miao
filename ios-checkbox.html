@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body {
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+
+      section {
+        display: inline-block;
+        position: absolute;
+        top: 300px;
+      }
+
       .slide {
         width: 100px;
         height: 50px;
@@ -27,7 +39,7 @@
         position: relative;
       }
 
-      .circle label {
+      .circle label:first-child {
         display: inline-block;
         width: 42px;
         height: 42px;
@@ -43,6 +55,21 @@
         transition: left 0.8s ease-in-out, width 0.4s;
       }
 
+      .circle label:last-child {
+        display: inline-block;
+        width: 42px;
+        height: 42px;
+        border-radius: 50px;
+
+        background-color: white;
+
+        position: absolute;
+        top: 4px;
+        left: 4px;
+
+        transition: left 0.7s ease-in-out, width 0.4s;
+      }
+
       input:checked ~ .circle label {
         left: 54px;
       }
@@ -56,6 +83,7 @@
     <section>
       <input type="checkbox" id="yuan" />
       <div class="circle">
+        <label for="yuan"></label>
         <label for="yuan"></label>
       </div>
       <div class="slide"></div>
