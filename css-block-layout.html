@@ -60,7 +60,8 @@
       margin-right: 25px;
     }
 
-    .table1 span:hover {
+    .table li:hover,
+    .table span:hover {
       background-color: red;
     }
 
@@ -79,6 +80,29 @@
       line-height: 34px;
     }
 
+    .t3 {
+      display: flex;
+      width: 600px;
+      height: 205px;
+      margin: 0 auto;
+    }
+
+    .table3 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 30px;
+    }
+
+    .table3 li {
+      width: 180px;
+      height: 40px;
+      border: 3px solid;
+      background-color: pink;
+      flex-grow: 1;
+      text-align: center;
+      line-height: 34px;
+    }
+
     .table2 li:nth-child(n + 5) {
       margin-left: 210px;
     }
@@ -88,10 +112,6 @@
 
     .table2 li:nth-child(4n + 5) {
       margin-top: -205px;
-    }
-
-    .table2 li:hover {
-      background-color: red;
     }
 
     .link {
@@ -135,7 +155,7 @@
         页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
         宽度600px
       </article>
-      <div class="table1">
+      <div class="table1 table">
         <span>宽180高40(包含边框)</span>
         <span>水平间隙30px</span>
         <span>垂直间隙15px</span>
@@ -152,7 +172,7 @@
 
       <br />
       <br />
-      <ul class="table2">
+      <ul class="table2 table">
         <li>宽180高40(包含边框)</li>
         <li>水平间隙30px</li>
         <li>垂直间隙15px</li>
@@ -166,6 +186,28 @@
         <li>产品</li>
         <li>产品</li>
       </ul>
+
+      <br />
+      <br />
+      <div class="t3">
+        <ul class="table3 table">
+          <li>宽180高40(包含边框)</li>
+          <li>水平间隙30px</li>
+          <li>垂直间隙15px</li>
+          <li>边框宽度3px</li>
+          <li>产品</li>
+          <li>产品</li>
+          <li>产品</li>
+          <li>产品</li>
+          <li>产品</li>
+          <li>产品</li>
+          <li>产品</li>
+          <li>产品</li>
+        </ul>
+      </div>
+
+      <br />
+      <br />
 
       <ul class="link">
         <li>link</li>
