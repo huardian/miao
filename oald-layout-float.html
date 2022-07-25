@@ -5,80 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      aside {
+        width: 200px;
+        background-color: pink;
+        height: 100vh;
+        border: 1px solid;
+        float: left;
+      }
+
+      aside form {
+        margin-bottom: 20px;
+      }
+
+      aside .word {
+        margin-top: 40px;
+        overflow: auto;
+        height: 88vh;
+      }
+
+      form input {
+        width: 163px;
+        float: left;
+      }
+
+      form .btn {
+        width: 35px;
+        height: 25px;
+        float: right;
+      }
+
+      aside p {
+        text-align: right;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 3;
+        margin: 0 0.5em;
+      }
+
+      .article {
+        background-color: cornsilk;
+        width: calc(100vw - 617px);
+        height: 100vh;
+        float: left;
+      }
+
+      .article span {
+        font-weight: bold;
+        line-height: 3;
+        font-size: 24px;
+        border-bottom: 2px solid;
+      }
+
+      .article .lorem {
+        height: 90vh;
+        overflow: auto;
+      }
+
+      aside .vocabulary {
+        float: right;
+      }
+
+      aside .history {
+        float: right;
+      }
+    </style>
   </head>
-  <style>
-    * {
-      margin: 0;
-      box-sizing: border-box;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    section {
-      display: flex;
-    }
-
-    aside {
-      background-color: pink;
-      height: 100vh;
-      flex: 1;
-      border: 1px solid;
-    }
-
-    aside form {
-      display: flex;
-      justify-content: center;
-      flex: 1;
-      margin-bottom: 20px;
-    }
-
-    aside .word {
-      overflow: auto;
-      height: 88vh;
-    }
-
-    form .btn {
-      width: 35px;
-      height: 25px;
-    }
-
-    aside p {
-      text-align: right;
-      font-size: 24px;
-      font-weight: bold;
-      line-height: 3;
-      margin: 0 0.5em;
-    }
-
-    .article {
-      height: 100vh;
-      flex: 6;
-      background-color: cornsilk;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .article span {
-      font-weight: bold;
-      line-height: 3;
-      font-size: 24px;
-      border-bottom: 2px solid;
-
-      flex: 0.5;
-    }
-
-    .article .lorem {
-      flex: 9;
-      height: 70vh;
-      overflow: auto;
-    }
-  </style>
   <body>
     <section>
       <aside>

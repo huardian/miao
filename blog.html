@@ -5,30 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
+    <style type="text/less">
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
 
-      section {
+      body {
+        display: flex;
+        justify-content: center;
+      }
+
+      button {
+        display: flex;
         width: 200px;
         height: 100px;
+        margin-top: 200px;
         background-color: green;
         border-bottom: 5px solid red;
-        line-height: 165px;
         color: white;
-        padding-left: 5px;
         cursor: pointer;
-
+        align-items: flex-end;
+        padding-left: 10px;
         &:focus {
-          background-color: #0000ff;
+          background-color: rgb(160, 208, 224);
+          color: rgb(80, 80, 80);
+          font-size: 40px;
+          transition: font-size 2s;
         }
       }
     </style>
   </head>
   <body>
-    <section>订阅博客</section>
+    <button>订阅博客</button>
+    <script src="less.js"></script>
   </body>
 </html>
