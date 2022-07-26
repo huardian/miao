@@ -3,321 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="小米官网直营小米公司旗下所有产品，包括Xiaomi手机系列Xiaomi 12、MIX、Redmi 红米系列、Redmi Note 11、K50、Redmi Note、小米电视、笔记本、米家智能家居等，同时提供小米官方服务及售后支持."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/mi.css" />
-    <title>小米商城</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      * ul {
-        list-style: none;
-      }
-      body {
-        min-width: 1226px;
-      }
-      .wrap {
-        width: 1226px;
-        margin: 0 auto;
-      }
-      .nav-bar {
-        background-color: #333333;
-        height: 40px;
-      }
-      .nav-bar .nav ul {
-        display: flex;
-        align-items: center;
-        color: #b0b0b0;
-        font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
-          "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
-        font-size: 12px;
-      }
-      .nav-bar .nav ul li {
-        height: 40px;
-        display: flex;
-        align-items: center;
-        padding: 0 7px;
-      }
-      .nav-bar .nav ul li:first-child {
-        padding-left: 0;
-      }
-      .nav-bar .nav ul li:hover {
-        color: #fff;
-        cursor: pointer;
-      }
-      .nav-bar .nav ul span {
-        color: #424242;
-        font-size: 12px;
-      }
-      .nav-bar .login {
-        position: relative;
-        top: -40px;
-        left: 950px;
-      }
-      .nav-bar .cart {
-        display: flex;
-        justify-content: center;
-        gap: 5px;
-        position: relative;
-        top: -80px;
-        left: 1106px;
-        width: 120px;
-        height: 40px;
-        align-items: flex-start;
-        color: #b0b0b0;
-        font-size: 12px;
-        background-color: #424242;
-        padding-top: 12px;
-        cursor: pointer;
-      }
-      .nav-bar .cart:hover {
-        color: #ff6700;
-        background-color: #fff;
-      }
-      .nav-bar .icon-cart {
-        width: 20px;
-        height: 20px;
-      }
-      .sub-header {
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .sub-header .sub-nav {
-        display: flex;
-        position: relative;
-        font-size: 16px;
-        left: 45px;
-        gap: 20px;
-        cursor: pointer;
-      }
-      .sub-header .sub-nav :hover {
-        color: orangered;
-      }
-      .sub-header .logo {
-        width: 56px;
-        height: 56px;
-        background-image: url(https://s02.mifile.cn/assets/static/image/logo-mi2.png);
-        background-size: cover;
-      }
-      .sub-header .search {
-        display: flex;
-        position: relative;
-      }
-      .sub-header .search input {
-        width: 245px;
-        font-size: 14px;
-        padding-left: 10px;
-        border: 1px solid #b0b0b0;
-      }
-      .sub-header .search button {
-        display: flex;
-        width: 56px;
-        height: 56px;
-        cursor: pointer;
-        background-color: #fff;
-        border: 1px solid #b0b0b0;
-        align-items: center;
-        justify-content: center;
-        transition: 0.5s;
-      }
-      .sub-header .search button:hover {
-        background-color: orangered;
-      }
-      .sub-header .search button:hover .icon-search {
-        stroke: #fff;
-      }
-      .sub-header .search button .icon-search {
-        width: 24px;
-        height: 24px;
-      }
-      .hero {
-        position: relative;
-      }
-      .hero .aside {
-        position: relative;
-        width: 234px;
-        height: 460px;
-        background-color: rgba(105, 101, 101, 0.6);
-        padding: 20px 0;
-        color: #fff;
-        z-index: 100;
-      }
-      .hero .aside ul li {
-        font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei,
-          Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
-        height: 42px;
-        width: 234px;
-        padding-left: 30px;
-        padding-right: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-      }
-      .hero .aside ul li:hover {
-        background-color: orangered;
-      }
-      .hero .aside .icon-right {
-        width: 20px;
-        height: 20px;
-      }
-      .hero .slider {
-        height: 460px;
-        width: 1226px;
-        position: absolute;
-        top: 0px;
-      }
-      .hero .slider img {
-        width: 1226px;
-        height: 460px;
-      }
-      .hero .slider .button {
-        position: absolute;
-        width: 980px;
-        top: 210px;
-        left: 240px;
-        border: none;
-        display: flex;
-        justify-content: space-between;
-        z-index: 100;
-      }
-      .hero .slider .button button {
-        background-color: transparent;
-        border: none;
-      }
-      .hero .slider .icon-slider {
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        stroke: #888;
-      }
-      .sub-hero {
-        margin-top: 20px;
-        margin-bottom: 30px;
-        display: flex;
-        justify-content: space-between;
-      }
-      .sub-hero .info {
-        display: inline-block;
-        width: 234px;
-        height: 170px;
-        padding: 3px;
-        background-color: #5f5750;
-      }
-      .sub-hero .info li {
-        width: 76px;
-        height: 82px;
-        float: left;
-        font-size: 12px;
-        color: #cfccca;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-      }
-      .sub-hero .info li:hover {
-        color: #fff;
-      }
-      .sub-hero .info li:hover img {
-        filter: drop-shadow(0 0 0 #fff);
-      }
-      .sub-hero .info li span img {
-        width: 24px;
-        height: 24px;
-      }
-      .sub-hero > a img {
-        width: 316px;
-        height: 170px;
-      }
-      .shop {
-        background-color: #f5f5f5;
-      }
-      .shop .banner img {
-        margin-top: 30px;
-        margin-bottom: 50px;
-        width: 1226px;
-      }
-      .shop .phone-title {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-      }
-      .shop .phone-title span:first-child {
-        font-size: 22px;
-      }
-      .shop .phone-title span:last-child {
-        display: flex;
-        gap: 5px;
-        align-items: center;
-        cursor: pointer;
-        transition: 0.5s;
-        color: #b0b0b0;
-      }
-      .shop .phone-title span:last-child:hover {
-        color: orangered;
-      }
-      .shop .phone-title span:last-child:hover .icon-more {
-        stroke: orangered;
-      }
-      .shop .phone-title .icon-more {
-        width: 24px;
-        height: 24px;
-        stroke: #b0b0b0;
-      }
-      .shop .phones {
-        height: 614px;
-        display: flex;
-      }
-      .shop .phones .left {
-        height: 614px;
-      }
-      .shop .phones .p-8 {
-        margin-left: 16px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        gap: 16px;
-      }
-      .shop .phones .p-8 a {
-        text-decoration: none;
-        width: 234px;
-        height: 300px;
-        background-color: #fff;
-        padding: 20px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .shop .phones .p-8 a h4 {
-        font-size: 14px;
-        font-weight: 400;
-        color: #333;
-        margin-top: 20px;
-      }
-      .shop .phones .p-8 a p {
-        font-size: 12px;
-        color: #b0b0b0;
-        margin-top: 5px;
-      }
-      .shop .phones .p-8 a span {
-        font-size: 14px;
-        color: #ff6700;
-        margin-top: 10px;
-      }
-      .shop .phones .p-8 a img {
-        width: 160px;
-        height: 160px;
-      }
-      .shop .phones .p-8 a:hover {
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        transform: translate3d(0, -2px, 0);
-      }
-    </style>
+    <title>小米商城 - Xiaomi 12、Redmi K50、MIX FOLD，小米电视官方网站</title>
   </head>
   <body>
     <div class="header">
@@ -604,9 +296,27 @@
       </div>
 
       <div class="slider">
-        <img
-          src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ce029906e8b21a65cc3ec4966e61ff7d.jpg?w=2452&h=920"
-        />
+        <div class="imgs">
+          <img
+            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ce029906e8b21a65cc3ec4966e61ff7d.jpg?w=2452&h=920"
+          />
+
+          <img
+            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1b948da8a19fe290d46ae532b54afe7b.jpeg?thumb=1&w=1533&h=575&f=webp&q=90"
+            alt=""
+          />
+
+          <img
+            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/36b45c624f42fa81732457e3f9773dbd.jpg?thumb=1&w=1533&h=575&f=webp&q=90"
+          />
+          <img
+            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4b3ea061939040707aa775043fe86884.jpg?thumb=1&w=1533&h=575&f=webp&q=90"
+          />
+          <img
+            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/05b2e16c007ca8bc2ae6e3541ad910df.jpg?thumb=1&w=1533&h=575&f=webp&q=90"
+          />
+        </div>
+
         <div class="button">
           <button class="last">
             <svg
@@ -830,5 +540,29 @@
         </div>
       </div>
     </div>
+    <script>
+      const next = document.querySelector(".next");
+      const last = document.querySelector(".last");
+      const slider = document.querySelector(".imgs");
+      console.log(slider);
+      let a = 0;
+
+      next.addEventListener("click", function () {
+        if (a > -4904) {
+          a -= 1226;
+        } else {
+          a = 0;
+        }
+        console.log(a);
+        slider.style.left = a + "px";
+      });
+
+      last.addEventListener("click", function () {
+        if (a < 0) a += 1226;
+        else a = -4904;
+        console.log(a);
+        slider.style.left = a + "px";
+      });
+    </script>
   </body>
 </html>

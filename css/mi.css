@@ -159,6 +159,14 @@ body {
   width: 1226px;
   position: absolute;
   top: 0px;
+  overflow: hidden;
+}
+.hero .slider .imgs {
+  display: flex;
+  position: relative;
+  height: 460px;
+  left: 0px;
+  transition: 1s;
 }
 .hero .slider img {
   width: 1226px;
