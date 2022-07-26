@@ -186,6 +186,12 @@ body {
   background-color: transparent;
   border: none;
 }
+.hero .slider .button button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.hero .slider .button button:hover .icon-slider {
+  stroke: #fff;
+}
 .hero .slider .icon-slider {
   width: 40px;
   height: 40px;
