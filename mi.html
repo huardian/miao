@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/mi.css" />
+    <title>小米商城</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      * ul {
+        list-style: none;
+      }
+      body {
+        min-width: 1226px;
+      }
+      .wrap {
+        width: 1226px;
+        margin: 0 auto;
+      }
+      .nav-bar {
+        background-color: #333333;
+        height: 40px;
+      }
+      .nav-bar .nav ul {
+        display: flex;
+        align-items: center;
+        color: #b0b0b0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
+          "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+        font-size: 12px;
+      }
+      .nav-bar .nav ul li {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding: 0 7px;
+      }
+      .nav-bar .nav ul li:first-child {
+        padding-left: 0;
+      }
+      .nav-bar .nav ul li:hover {
+        color: #fff;
+        cursor: pointer;
+      }
+      .nav-bar .nav ul span {
+        color: #424242;
+        font-size: 12px;
+      }
+      .nav-bar .login {
+        position: relative;
+        top: -40px;
+        left: 950px;
+      }
+      .nav-bar .cart {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        position: relative;
+        top: -80px;
+        left: 1106px;
+        width: 120px;
+        height: 40px;
+        align-items: flex-start;
+        color: #b0b0b0;
+        font-size: 12px;
+        background-color: #424242;
+        padding-top: 12px;
+        cursor: pointer;
+      }
+      .nav-bar .cart:hover {
+        color: #ff6700;
+        background-color: #fff;
+      }
+      .nav-bar .icon-cart {
+        width: 20px;
+        height: 20px;
+      }
+      .sub-header {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .sub-header .sub-nav {
+        display: flex;
+        position: relative;
+        font-size: 16px;
+        left: 45px;
+        gap: 20px;
+        cursor: pointer;
+      }
+      .sub-header .sub-nav :hover {
+        color: orangered;
+      }
+      .sub-header .logo {
+        width: 56px;
+        height: 56px;
+        background-image: url(https://s02.mifile.cn/assets/static/image/logo-mi2.png);
+        background-size: cover;
+      }
+      .sub-header .search {
+        display: flex;
+        position: relative;
+      }
+      .sub-header .search input {
+        width: 245px;
+        font-size: 14px;
+        padding-left: 10px;
+        border: 1px solid #b0b0b0;
+      }
+      .sub-header .search button {
+        display: flex;
+        width: 56px;
+        height: 56px;
+        cursor: pointer;
+        background-color: #fff;
+        border: 1px solid #b0b0b0;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s;
+      }
+      .sub-header .search button:hover {
+        background-color: orangered;
+      }
+      .sub-header .search button:hover .icon-search {
+        stroke: #fff;
+      }
+      .sub-header .search button .icon-search {
+        width: 24px;
+        height: 24px;
+      }
+      .hero {
+        position: relative;
+      }
+      .hero .aside {
+        position: relative;
+        width: 234px;
+        height: 460px;
+        background-color: rgba(105, 101, 101, 0.6);
+        padding: 20px 0;
+        color: #fff;
+        z-index: 100;
+      }
+      .hero .aside ul li {
+        font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei,
+          Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+        height: 42px;
+        width: 234px;
+        padding-left: 30px;
+        padding-right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+      .hero .aside ul li:hover {
+        background-color: orangered;
+      }
+      .hero .aside .icon-right {
+        width: 20px;
+        height: 20px;
+      }
+      .hero .slider {
+        height: 460px;
+        width: 1226px;
+        position: absolute;
+        top: 0px;
+      }
+      .hero .slider img {
+        width: 1226px;
+        height: 460px;
+      }
+      .hero .slider .button {
+        position: absolute;
+        width: 980px;
+        top: 210px;
+        left: 240px;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        z-index: 100;
+      }
+      .hero .slider .button button {
+        background-color: transparent;
+        border: none;
+      }
+      .hero .slider .icon-slider {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        stroke: #888;
+      }
+      .sub-hero {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .sub-hero .info {
+        display: inline-block;
+        width: 234px;
+        height: 170px;
+        padding: 3px;
+        background-color: #5f5750;
+      }
+      .sub-hero .info li {
+        width: 76px;
+        height: 82px;
+        float: left;
+        font-size: 12px;
+        color: #cfccca;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .sub-hero .info li:hover {
+        color: #fff;
+      }
+      .sub-hero .info li:hover img {
+        filter: drop-shadow(0 0 0 #fff);
+      }
+      .sub-hero .info li span img {
+        width: 24px;
+        height: 24px;
+      }
+      .sub-hero > a img {
+        width: 316px;
+        height: 170px;
+      }
+      .shop {
+        background-color: #f5f5f5;
+      }
+      .shop .banner img {
+        margin-top: 30px;
+        margin-bottom: 50px;
+        width: 1226px;
+      }
+      .shop .phone-title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      .shop .phone-title span:first-child {
+        font-size: 22px;
+      }
+      .shop .phone-title span:last-child {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.5s;
+        color: #b0b0b0;
+      }
+      .shop .phone-title span:last-child:hover {
+        color: orangered;
+      }
+      .shop .phone-title span:last-child:hover .icon-more {
+        stroke: orangered;
+      }
+      .shop .phone-title .icon-more {
+        width: 24px;
+        height: 24px;
+        stroke: #b0b0b0;
+      }
+      .shop .phones {
+        height: 614px;
+        display: flex;
+      }
+      .shop .phones .left {
+        height: 614px;
+      }
+      .shop .phones .p-8 {
+        margin-left: 16px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 16px;
+      }
+      .shop .phones .p-8 a {
+        text-decoration: none;
+        width: 234px;
+        height: 300px;
+        background-color: #fff;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .shop .phones .p-8 a h4 {
+        font-size: 14px;
+        font-weight: 400;
+        color: #333;
+        margin-top: 20px;
+      }
+      .shop .phones .p-8 a p {
+        font-size: 12px;
+        color: #b0b0b0;
+        margin-top: 5px;
+      }
+      .shop .phones .p-8 a span {
+        font-size: 14px;
+        color: #ff6700;
+        margin-top: 10px;
+      }
+      .shop .phones .p-8 a img {
+        width: 160px;
+        height: 160px;
+      }
+      .shop .phones .p-8 a:hover {
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        transform: translate3d(0, -2px, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="nav-bar">
+        <div class="nav wrap">
+          <ul>
+            <li>小米官网</li>
+            <span class="sep">|</span>
+            <li>小米商城</li>
+            <span class="sep">|</span>
+            <li>MIUI</li>
+            <span class="sep">|</span>
+            <li>loT</li>
+            <span class="sep">|</span>
+            <li>云服务</li>
+            <span class="sep">|</span>
+            <li>天星数科</li>
+            <span class="sep">|</span>
+            <li>有品</li>
+            <span class="sep">|</span>
+            <li>小爱开放平台</li>
+            <span class="sep">|</span>
+            <li>企业团购</li>
+            <span class="sep">|</span>
+            <li>资质证照</li>
+            <span class="sep">|</span>
+            <li>协议规则</li>
+            <span class="sep">|</span>
+            <li>下载app</li>
+            <span class="sep">|</span>
+            <li>Select Location</li>
+          </ul>
+
+          <ul class="login">
+            <li>登录</li>
+            <li>注册</li>
+            <li>消息通知</li>
+          </ul>
+
+          <div class="cart">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-cart"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+            </span>
+            <span>购物车</span>
+            <span>(0)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-header wrap">
+      <a href="https://www.mi.com/" class="logo"></a>
+
+      <ul class="sub-nav">
+        <li>Xiaomi手机</li>
+        <li>Redmi手机</li>
+        <li>电视</li>
+        <li>笔记本</li>
+        <li>平板</li>
+        <li>家电</li>
+        <li>路由器</li>
+        <li>服务中心</li>
+        <li>社区</li>
+      </ul>
+
+      <form class="search">
+        <input type="text" placeholder="显示器" />
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon-search"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <div class="hero wrap">
+      <div class="aside">
+        <ul>
+          <li>
+            <span>手机</span
+            ><span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-right"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                /></svg
+            ></span>
+          </li>
+          <li>
+            <span>电视</span
+            ><span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-right"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                /></svg
+            ></span>
+          </li>
+          <li>
+            <span>笔记本 平板</span
+            ><span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-right"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                /></svg
+            ></span>
+          </li>
+          <li>
+            <span>出行 穿戴</span
+            ><span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-right"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                /></svg
+            ></span>
+          </li>
+          <li>
+            <span>耳机 音箱</span
+            ><span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-right"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                /></svg
+            ></span>
+          </li>
+          <li>
+            <span>家电</span
+            ><span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-right"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                /></svg
+            ></span>
+          </li>
+          <li>
+            <span>智能 路由器</span
+            ><span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-right"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                /></svg
+            ></span>
+          </li>
+          <li>
+            <span>电源 配件</span
+            ><span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-right"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                /></svg
+            ></span>
+          </li>
+          <li>
+            <span>健康 儿童</span
+            ><span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-right"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                /></svg
+            ></span>
+          </li>
+          <li>
+            <span>生活 箱包</span
+            ><span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-right"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                /></svg
+            ></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="slider">
+        <img
+          src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ce029906e8b21a65cc3ec4966e61ff7d.jpg?w=2452&h=920"
+        />
+        <div class="button">
+          <button class="last">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-slider"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button class="next">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-slider"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-hero wrap">
+      <div class="info">
+        <ul>
+          <li>
+            <span
+              ><img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/82abdba456e8caaea5848a0cddce03db.png?w=48&h=48"
+                alt="" /></span
+            ><span>保障服务</span>
+          </li>
+          <li>
+            <span
+              ><img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/806f2dfb2d27978e33fe3815d3851fa3.png?w=48&h=48"
+                alt="" /></span
+            ><span>企业团购</span>
+          </li>
+          <li>
+            <span
+              ><img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eded6fa3b897a058163e2485532c4f10.png?w=48&h=48"
+                alt="" /></span
+            ><span>F码通道</span>
+          </li>
+          <li>
+            <span
+              ><img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43a3195efa6a3cc7662efed8e7abe8bf.png?w=48&h=48"
+                alt="" /></span
+            ><span>米粉卡</span>
+          </li>
+          <li>
+            <span
+              ><img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f4846bca6010a0deb9f85464409862af.png?w=48&h=48"
+                alt="" /></span
+            ><span>以旧换新</span>
+          </li>
+          <li>
+            <span
+              ><img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9a76d7636b08e0988efb4fc384ae497b.png?w=48&h=48"
+                alt="" /></span
+            ><span>话费充值</span>
+          </li>
+        </ul>
+      </div>
+      <a href="https://www.mi.com/mi12s-ultra">
+        <img
+          src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/290270b6fc499fc5fcb653417e99fe91.jpg?w=632&h=340"
+          alt=""
+        />
+      </a>
+
+      <a href="https://www.mi.com/mi12s-pro">
+        <img
+          src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5d1892854c8bb165e755d68bde287d71.jpg?w=632&h=340"
+          alt=""
+        />
+      </a>
+
+      <a href="https://www.mi.com/xiaomiwatchs1">
+        <img
+          src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/28c13d0d11b38ec17fa5d83bc6ba5912.jpg?w=632&h=340"
+          alt=""
+        />
+      </a>
+    </div>
+
+    <div class="shop">
+      <div class="banner wrap">
+        <a href="https://www.mi.com/mi12s-ultra">
+          <img
+            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2656295f6c067f48a04a425acf15a096.jpg?thumb=1&w=1533&h=150&f=webp&q=90"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="phone-title wrap">
+        <span>手机</span>
+        <span
+          ><p>查看更多</p>
+          <em
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-more"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                clip-rule="evenodd"
+              /></svg></em
+        ></span>
+      </div>
+      <div class="phones wrap">
+        <a href="https://www.mi.com/mi12s-ultra"
+          ><img
+            class="left"
+            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6b99bcb716c8f76e1fc5475172bdfc27.jpg?thumb=1&w=293&h=768&f=webp&q=90"
+        /></a>
+        <div class="p-8">
+          <div class="phone1">
+            <a href="https://www.mi.com/mi12s-ultra">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207011810_86ad513472d1423a3fdec8d7d5107038.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Xiaomi 12S Ultra</h4>
+              <p>这阵徕卡 | 专业徕卡影像</p>
+              <span>5999元起</span>
+            </a>
+          </div>
+          <div class="phone1">
+            <a href="https://www.mi.com/mi12s-ultra">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207011810_86ad513472d1423a3fdec8d7d5107038.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Xiaomi 12S Ultra</h4>
+              <p>这阵徕卡 | 专业徕卡影像</p>
+              <span>5999元起</span>
+            </a>
+          </div>
+          <div class="phone1">
+            <a href="https://www.mi.com/mi12s-ultra">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207011810_86ad513472d1423a3fdec8d7d5107038.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Xiaomi 12S Ultra</h4>
+              <p>这阵徕卡 | 专业徕卡影像</p>
+              <span>5999元起</span>
+            </a>
+          </div>
+          <div class="phone1">
+            <a href="https://www.mi.com/mi12s-ultra">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207011810_86ad513472d1423a3fdec8d7d5107038.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Xiaomi 12S Ultra</h4>
+              <p>这阵徕卡 | 专业徕卡影像</p>
+              <span>5999元起</span>
+            </a>
+          </div>
+          <div class="phone1">
+            <a href="https://www.mi.com/mi12s-ultra">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207011810_86ad513472d1423a3fdec8d7d5107038.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Xiaomi 12S Ultra</h4>
+              <p>这阵徕卡 | 专业徕卡影像</p>
+              <span>5999元起</span>
+            </a>
+          </div>
+          <div class="phone1">
+            <a href="https://www.mi.com/mi12s-ultra">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207011810_86ad513472d1423a3fdec8d7d5107038.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Xiaomi 12S Ultra</h4>
+              <p>这阵徕卡 | 专业徕卡影像</p>
+              <span>5999元起</span>
+            </a>
+          </div>
+          <div class="phone1">
+            <a href="https://www.mi.com/mi12s-ultra">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207011810_86ad513472d1423a3fdec8d7d5107038.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Xiaomi 12S Ultra</h4>
+              <p>这阵徕卡 | 专业徕卡影像</p>
+              <span>5999元起</span>
+            </a>
+          </div>
+          <div class="phone1">
+            <a href="https://www.mi.com/mi12s-ultra">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207011810_86ad513472d1423a3fdec8d7d5107038.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Xiaomi 12S Ultra</h4>
+              <p>这阵徕卡 | 专业徕卡影像</p>
+              <span>5999元起</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
