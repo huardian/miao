@@ -87,26 +87,86 @@ body {
 .sub-header .sub-nav :hover {
   color: orangered;
 }
-.sub-header .logo {
+.sub-header .sub-nav .sub-list-container {
+  display: inline-block;
+  width: 100vw;
+  height: 290px;
+  background-color: rgba(255, 0, 0, 0.3);
+  position: absolute;
+  top: 60px;
+  left: -285px;
+  z-index: 200;
+}
+.sub-header .sub-nav .sub-list-container .sub-list {
+  position: relative;
+  background-color: #fff;
+  width: 1226px;
+  height: 290px;
+  margin: 0 auto;
+  left: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.sub-header .sub-nav .sub-list-container .sub-list .el {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sub-header .sub-nav .sub-list-container .sub-list .el a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+}
+.sub-header .sub-nav .sub-list-container .sub-list .el a img {
+  width: 160px;
+  height: 110px;
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+.sub-header .sub-nav .sub-list-container .sub-list .el a h4 {
+  font-size: 10px;
+  color: #333;
+}
+.sub-header .sub-nav .sub-list-container .sub-list .el a span {
+  color: #ff6700;
+}
+.sub-header .sub-nav .sub-list-container .sub-list .el:last-child a img {
+  border-right: none;
+}
+.logo {
   width: 56px;
   height: 56px;
   background-image: url(https://s02.mifile.cn/assets/static/image/logo-mi2.png);
   background-size: cover;
 }
-.sub-header .search {
+.search {
   display: flex;
   position: relative;
 }
-.sub-header .search input {
+.search input {
   width: 245px;
+  height: 50px;
   font-size: 14px;
   padding-left: 10px;
   border: 1px solid #b0b0b0;
 }
-.sub-header .search button {
+.search input:focus {
+  outline: none;
+  border: 1px solid #ff6700;
+}
+.search input:focus + button {
+  border: 1px solid #ff6700;
+  transition: 0;
+}
+.search input + button {
   display: flex;
-  width: 56px;
-  height: 56px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   background-color: #fff;
   border: 1px solid #b0b0b0;
@@ -114,13 +174,13 @@ body {
   justify-content: center;
   transition: 0.5s;
 }
-.sub-header .search button:hover {
+.search input + button:hover {
   background-color: orangered;
 }
-.sub-header .search button:hover .icon-search {
+.search input + button:hover .icon-search {
   stroke: #fff;
 }
-.sub-header .search button .icon-search {
+.search input + button .icon-search {
   width: 24px;
   height: 24px;
 }
@@ -149,6 +209,39 @@ body {
 }
 .hero .aside ul li:hover {
   background-color: orangered;
+}
+.hero .aside ul li:hover ~ .aside-list {
+  display: grid;
+}
+.hero .aside ul .aside-list {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 992px;
+  height: 460px;
+  background-color: white;
+  position: absolute;
+  left: 234px;
+  top: 0px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+.hero .aside ul .aside-list .el {
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+  justify-content: left;
+  cursor: pointer;
+}
+.hero .aside ul .aside-list .el img {
+  width: 40px;
+  height: 40px;
+}
+.hero .aside ul .aside-list .el span {
+  color: #000;
+}
+.hero .aside ul .aside-list .el span:hover {
+  color: #ff6700;
 }
 .hero .aside .icon-right {
   width: 20px;
@@ -180,7 +273,6 @@ body {
   border: none;
   display: flex;
   justify-content: space-between;
-  z-index: 100;
 }
 .hero .slider .button button {
   background-color: transparent;
@@ -311,6 +403,15 @@ body {
   font-size: 14px;
   color: #ff6700;
   margin-top: 10px;
+}
+.shop .phones .p-8 a em {
+  font-style: normal;
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #aaa;
+  position: relative;
+  top: -19px;
+  left: 58px;
 }
 .shop .phones .p-8 a img {
   width: 160px;

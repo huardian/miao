@@ -105,30 +105,100 @@ body {
     :hover {
       color: orangered;
     }
+
+    .sub-list-container {
+      display: inline-block;
+      width: 100vw;
+      height: 290px;
+      background-color: rgba(255, 0, 0, 0.3);
+      position: absolute;
+      top: 60px;
+      left: -285px;
+      z-index: 200;
+
+      .sub-list {
+        position: relative;
+        background-color: #fff;
+        width: 1226px;
+        height: 290px;
+        margin: 0 auto;
+        left: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .el {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #333;
+
+            img {
+              width: 160px;
+              height: 110px;
+
+              border-left: 1px solid;
+              border-right: 1px solid;
+            }
+
+            h4 {
+              font-size: 10px;
+              color: #333;
+            }
+
+            span {
+              color: #ff6700;
+            }
+          }
+
+          &:last-child a img {
+            border-right: none;
+          }
+        }
+      }
+    }
   }
+}
 
-  .logo {
-    width: 56px;
-    height: 56px;
-    background-image: url(https://s02.mifile.cn/assets/static/image/logo-mi2.png);
-    background-size: cover;
-  }
+.logo {
+  width: 56px;
+  height: 56px;
+  background-image: url(https://s02.mifile.cn/assets/static/image/logo-mi2.png);
+  background-size: cover;
+}
 
-  .search {
-    display: flex;
-    position: relative;
+.search {
+  display: flex;
+  position: relative;
 
-    input {
-      width: 245px;
-      font-size: 14px;
-      padding-left: 10px;
-      border: 1px solid #b0b0b0;
+  input {
+    width: 245px;
+    height: 50px;
+    font-size: 14px;
+    padding-left: 10px;
+    border: 1px solid #b0b0b0;
+
+    &:focus {
+      outline: none;
+      border: 1px solid #ff6700;
+
+      + button {
+        border: 1px solid #ff6700;
+        transition: 0;
+      }
     }
 
-    button {
+    + button {
       display: flex;
-      width: 56px;
-      height: 56px;
+      width: 50px;
+      height: 50px;
       cursor: pointer;
       background-color: #fff;
       border: 1px solid #b0b0b0;
@@ -162,21 +232,62 @@ body {
     color: #fff;
     z-index: 100;
 
-    ul li {
-      font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei,
-        Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
-      height: 42px;
-      width: 234px;
-      padding-left: 30px;
-      padding-right: 20px;
+    ul {
+      li {
+        font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei,
+          Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+        height: 42px;
+        width: 234px;
+        padding-left: 30px;
+        padding-right: 20px;
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
 
-      &:hover {
-        background-color: orangered;
+        &:hover {
+          background-color: orangered;
+
+          ~ .aside-list {
+            display: grid;
+          }
+        }
+      }
+
+      .aside-list {
+        display: none;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+        width: 992px;
+        height: 460px;
+        background-color: white;
+        position: absolute;
+        left: 234px;
+        top: 0px;
+        box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+        z-index: 999;
+
+        .el {
+          display: flex;
+          padding-left: 20px;
+          align-items: center;
+          justify-content: left;
+          cursor: pointer;
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
+
+          span {
+            color: #000;
+            &:hover {
+              color: #ff6700;
+            }
+          }
+        }
       }
     }
 
@@ -214,7 +325,6 @@ body {
       border: none;
       display: flex;
       justify-content: space-between;
-      z-index: 100;
 
       button {
         background-color: transparent;
@@ -372,6 +482,17 @@ body {
           font-size: 14px;
           color: #ff6700;
           margin-top: 10px;
+        }
+
+        em {
+          font-style: normal;
+          font-size: 14px;
+          text-decoration: line-through;
+          color: #aaa;
+
+          position: relative;
+          top: -19px;
+          left: 58px;
         }
 
         img {
