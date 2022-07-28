@@ -92,11 +92,11 @@ body {
 }
 .sub-header .sub-nav .sub-list-container {
   display: none;
-  width: 100vw;
+  width: 100%;
   height: 290px;
   position: absolute;
   top: 60px;
-  left: -625px;
+  left: -38.8%;
   z-index: 200;
   border-top: 1px solid #e0e0e0;
   transition: 0.5s;
@@ -395,6 +395,16 @@ body {
   height: 24px;
   stroke: #b0b0b0;
 }
+.shop .phone-title .hot-wear em {
+  font-size: 16px;
+  font-style: normal;
+  color: #424242;
+  padding: 5px 10px;
+}
+.shop .phone-title .hot-wear em:first-child {
+  color: orangered;
+  border-bottom: 2px solid orangered;
+}
 .shop .phones {
   height: 614px;
   display: flex;
@@ -452,4 +462,23 @@ body {
 .shop .phones .p-8 a:hover {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   transform: translate3d(0, -2px, 0);
+}
+.shop .phones .p-8 .phone-more a {
+  height: 142px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.shop .phones .p-8 .phone-more a h6 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+}
+.shop .phones .p-8 .phone-more a p {
+  color: #767676;
+}
+.shop .phones .p-8 .phone-more a .icon-morePhone {
+  width: 58px;
+  height: 58px;
+  stroke: orangered;
 }

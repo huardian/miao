@@ -112,11 +112,11 @@ body {
 
     .sub-list-container {
       display: none;
-      width: 100vw;
+      width: 100%;
       height: 290px;
       position: absolute;
       top: 60px;
-      left: -625px;
+      left: -38.8%;
       z-index: 200;
       border-top: 1px solid #e0e0e0;
       transition: 0.5s;
@@ -474,6 +474,18 @@ body {
       height: 24px;
       stroke: rgb(176, 176, 176);
     }
+
+    .hot-wear em {
+      font-size: 16px;
+      font-style: normal;
+      color: #424242;
+      padding: 5px 10px;
+
+      &:first-child {
+        color: orangered;
+        border-bottom: 2px solid orangered;
+      }
+    }
   }
 
   .phones {
@@ -540,6 +552,29 @@ body {
         &:hover {
           box-shadow: 0 15px 30px rgb(0 0 0 / 10%);
           transform: translate3d(0, -2px, 0);
+        }
+      }
+
+      .phone-more a {
+        height: 142px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        h6 {
+          font-size: 18px;
+          font-weight: 400;
+          color: #000;
+        }
+
+        p {
+          color: #767676;
+        }
+
+        .icon-morePhone {
+          width: 58px;
+          height: 58px;
+          stroke: orangered;
         }
       }
     }
