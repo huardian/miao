@@ -104,17 +104,22 @@ body {
 
     :hover {
       color: orangered;
+
+      ~ .sub-list-container {
+        display: inline-block;
+      }
     }
 
     .sub-list-container {
-      display: inline-block;
+      display: none;
       width: 100vw;
       height: 290px;
-      background-color: rgba(255, 0, 0, 0.3);
       position: absolute;
       top: 60px;
-      left: -285px;
+      left: -625px;
       z-index: 200;
+      border-top: 1px solid #e0e0e0;
+      transition: 0.5s;
 
       .sub-list {
         position: relative;
@@ -125,7 +130,6 @@ body {
         left: 6px;
         display: flex;
         align-items: center;
-        justify-content: space-around;
 
         .el {
           display: flex;
@@ -139,13 +143,13 @@ body {
             justify-content: center;
             text-decoration: none;
             color: #333;
+            width: 204px;
+
+            border-right: 1px solid #e0e0e0;
 
             img {
               width: 160px;
               height: 110px;
-
-              border-left: 1px solid;
-              border-right: 1px solid;
             }
 
             h4 {
@@ -158,7 +162,7 @@ body {
             }
           }
 
-          &:last-child a img {
+          &:last-child a {
             border-right: none;
           }
         }
@@ -297,45 +301,77 @@ body {
     }
   }
 
-  .slider {
+  .slider-container {
     height: 460px;
     width: 1226px;
     position: absolute;
     top: 0px;
     overflow: hidden;
 
-    .imgs {
-      display: flex;
-      position: relative;
-      height: 460px;
-      left: 0px;
-      transition: 1s;
-    }
-
     img {
       width: 1226px;
-      height: 460px;
+      opacity: 0;
+      position: absolute;
+      transition: 1s;
+
+      &:first-child {
+        opacity: 1;
+      }
     }
 
-    .button {
-      position: absolute;
-      width: 980px;
-      top: 210px;
-      left: 240px;
-      border: none;
+    .slider-button {
       display: flex;
+      position: relative;
+      top: 200px;
+      left: 235px;
+      width: 990px;
       justify-content: space-between;
 
       button {
+        width: 40px;
+        height: 60px;
         background-color: transparent;
         border: none;
+        cursor: pointer;
 
         &:hover {
-          background-color: rgba(0, 0, 0, 0.1);
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+      }
 
-          .icon-slider {
-            stroke: #fff;
-          }
+      .slider-btn--left,
+      .slider-btn--right {
+        stroke: #b8b4ae;
+
+        &:hover {
+          stroke: #e2e1df;
+        }
+      }
+    }
+
+    .slider-dots {
+      display: flex;
+      width: 180px;
+      position: relative;
+      top: 370px;
+      left: 1020px;
+      justify-content: space-evenly;
+
+      button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        outline: none;
+        border: 2px solid #46494d;
+        background-color: #000;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #72706d;
+        }
+
+        &:first-child {
+          background-color: #72706d;
         }
       }
     }
@@ -443,6 +479,7 @@ body {
   .phones {
     height: 614px;
     display: flex;
+    margin-bottom: 46px;
 
     .left {
       height: 614px;

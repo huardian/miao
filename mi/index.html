@@ -502,33 +502,33 @@
         </ul>
       </div>
 
-      <div class="slider">
-        <div class="imgs">
-          <img
-            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ce029906e8b21a65cc3ec4966e61ff7d.jpg?w=2452&h=920"
-          />
+      <div class="slider-container ">
+        <img
+          src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ce029906e8b21a65cc3ec4966e61ff7d.jpg?w=2452&h=920"
+          class="p0"
+        />
+        <img
+          src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1b948da8a19fe290d46ae532b54afe7b.jpeg?thumb=1&w=1533&h=575&f=webp&q=90"
+          class="p1"
+        />
+        <img
+          src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/36b45c624f42fa81732457e3f9773dbd.jpg?thumb=1&w=1533&h=575&f=webp&q=90"
+          class="p2"
+        />
+        <img
+          src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4b3ea061939040707aa775043fe86884.jpg?thumb=1&w=1533&h=575&f=webp&q=90"
+          class="p3"
+        />
+        <img
+          src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/05b2e16c007ca8bc2ae6e3541ad910df.jpg?thumb=1&w=1533&h=575&f=webp&q=90"
+          class="p4"
+        />
 
-          <img
-            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1b948da8a19fe290d46ae532b54afe7b.jpeg?thumb=1&w=1533&h=575&f=webp&q=90"
-            alt=""
-          />
-
-          <img
-            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/36b45c624f42fa81732457e3f9773dbd.jpg?thumb=1&w=1533&h=575&f=webp&q=90"
-          />
-          <img
-            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4b3ea061939040707aa775043fe86884.jpg?thumb=1&w=1533&h=575&f=webp&q=90"
-          />
-          <img
-            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/05b2e16c007ca8bc2ae6e3541ad910df.jpg?thumb=1&w=1533&h=575&f=webp&q=90"
-          />
-        </div>
-
-        <div class="button">
-          <button class="last">
+        <div class="slider-button">
+          <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="icon-slider"
+              class="slider-btn--left"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -541,10 +541,10 @@
               />
             </svg>
           </button>
-          <button class="next">
+          <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="icon-slider"
+              class="slider-btn--right"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -557,6 +557,14 @@
               />
             </svg>
           </button>
+        </div>
+
+        <div class="slider-dots">
+          <button class="d0"></button>
+          <button class="d1"></button>
+          <button class="d2"></button>
+          <button class="d3"></button>
+          <button class="d4"></button>
         </div>
       </div>
     </div>
@@ -746,30 +754,134 @@
           </div>
         </div>
       </div>
+      <div class="phone-title wrap">
+        <span>智能穿戴</span>
+        <span>
+          <em>热门</em>
+          <em>穿戴</em>
+        </span>
+      </div>
+      <div class="phones wrap">
+        <a href="https://www.mi.com/xiaomiwatchcolor2"
+          ><img
+            class="left"
+            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9895c56a7b792fb9053e3085fc261072.jpg?thumb=1&w=293&h=768&f=webp&q=90"
+        /></a>
+        <div class="p-8">
+          <div class="phone1">
+            <a href="https://www.mi.com/xiaomiwatchs1">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b8259e8fb355acf168c66f75d375c6af.jpg?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Xiaomi Watch S1</h4>
+              <p>蓝宝石玻璃镜面 | 不锈钢中框 | 1.43"A...</p>
+              <span>1049元起</span> <em>1099元</em>
+            </a>
+          </div>
+          <div class="phone2">
+            <a href="https://www.mi.com/mi12s-pro">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207012000_0b9df066c110f201154013ac373df1d9.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Xiaomi 12S Pro</h4>
+              <p>骁龙8+ 旗舰处理器 | 徕卡影像</p>
+              <span>4699元起</span>
+            </a>
+          </div>
+          <div class="phone3">
+            <a href="https://www.mi.com/mi12s">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207012022_19bbddb6b35c3828f8b53f450c1519a3.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Xiaomi 12S</h4>
+              <p>小尺寸性能旗舰 | 徕卡影像</p>
+              <span>3999元起</span>
+            </a>
+          </div>
+          <div class="phone4">
+            <a href="https://www.mi.com/mi12pro-dimensity">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207011841_084ed41d67f248677914605b73faf582.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Xiaomi 12 Pro 天玑版</h4>
+              <p>全球首发天玑9000+ | 叶脉冷泵散热系...</p>
+              <span>3999元起</span>
+            </a>
+          </div>
+          <div class="phone5">
+            <a href="https://www.mi.com/redminote11t-pro">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/211bb83776a8e0c8358732c3f3aa2864.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Redmi Note 11T Pro+</h4>
+              <p>天玑8100 | 真旗舰芯</p>
+              <span>1999元起</span> <em>2099元</em>
+            </a>
+          </div>
+          <div class="phone6">
+            <a href="https://www.mi.com/redminote11t-pro">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5713971c4bb6512743dfd06023080268.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Redmi Note 11T Pro</h4>
+              <p>天玑8100 | 真旗舰芯</p>
+              <span>1699元起</span> <em>1799元</em>
+            </a>
+          </div>
+          <div class="phone7">
+            <a href="https://www.mi.com/redminote11-se">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7fccce9e65aff2d7c913e40f4bee1b0b.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Redmi Note 11SE</h4>
+              <p>双卡双5G | 疾速登陆</p>
+              <span>999元起</span> <em>1099元</em>
+            </a>
+          </div>
+          <div class="phone8">
+            <a href="https://www.mi.com/xiaomicivi1s">
+              <img
+                src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0bcd64f412dfb5e15695fa96d21ecb23.png?thumb=1&w=250&h=250&f=webp&q=90"
+              />
+              <h4>Xiaomi Civi 1S</h4>
+              <p>原生美肌人像 | 奇迹阳光动人新色</p>
+              <span>2299元起</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
     <script>
-      const next = document.querySelector(".next");
-      const last = document.querySelector(".last");
-      const slider = document.querySelector(".imgs");
-      console.log(slider);
-      let a = 0;
+      let curSlide = 0;
+      const next = document.querySelector(".slider-btn--right");
+      const last = document.querySelector(".slider-btn--left");
+      let curImg = document.querySelector(`.p${curSlide}`);
+      let dot = document.querySelector(`.d${curSlide}`);
 
       next.addEventListener("click", function () {
-        if (a > -4904) {
-          a -= 1226;
-        } else {
-          a = 0;
-        }
-        console.log(a);
-        slider.style.left = a + "px";
+        curImg.style.opacity = "0";
+        dot.style.backgroundColor = "#000";
+
+        curSlide < 4 ? curSlide++ : (curSlide = 0);
+        curImg = document.querySelector(`.p${curSlide}`);
+        dot = document.querySelector(`.d${curSlide}`);
+        curImg.style.opacity = "1";
+        dot.style.backgroundColor = "#72706d";
       });
 
       last.addEventListener("click", function () {
-        if (a < 0) a += 1226;
-        else a = -4904;
-        console.log(a);
-        slider.style.left = a + "px";
+        curImg.style.opacity = "0";
+        dot.style.backgroundColor = "#000";
+
+        curSlide > 0 ? curSlide-- : (curSlide = 4);
+        curImg = document.querySelector(`.p${curSlide}`);
+        dot = document.querySelector(`.d${curSlide}`);
+        curImg.style.opacity = "1";
+        dot.style.backgroundColor = "#72706d";
       });
+
+
+
     </script>
   </body>
 </html>
